@@ -7,11 +7,11 @@ function Employees (props) {
   return (
     <div>
       <h1>These are our Employees</h1>
-      <ul>
+      <ul className="list-group">
         {
           employees &&
           employees.map(employee => (
-          <li key={employee.id}>
+          <li className="list-group-item" key={employee.id}>
             {
               employee.ManagerId ?
                 `${employee.name} is managed by ${employee.Manager.name}`

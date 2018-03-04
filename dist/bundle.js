@@ -24106,7 +24106,7 @@ var Main = function (_React$Component) {
         null,
         _react2.default.createElement(
           'div',
-          null,
+          { className: 'container' },
           _react2.default.createElement(_reactRouterDom.Route, { component: _Nav2.default }),
           _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/', render: function render(employees) {
               return _react2.default.createElement(_Employees2.default, { employees: _this3.state.people });
@@ -24156,11 +24156,11 @@ function Employees(props) {
     ),
     _react2.default.createElement(
       'ul',
-      null,
+      { className: 'list-group' },
       employees && employees.map(function (employee) {
         return _react2.default.createElement(
           'li',
-          { key: employee.id },
+          { className: 'list-group-item', key: employee.id },
           employee.ManagerId ? employee.name + ' is managed by ' + employee.Manager.name : '' + employee.name
         );
       })
@@ -25086,11 +25086,11 @@ function Managers(props) {
     ),
     _react2.default.createElement(
       'ul',
-      null,
+      { className: 'list-group' },
       managers.map(function (manager) {
         return _react2.default.createElement(
           'li',
-          { key: manager.id },
+          { className: 'list-group-item', key: manager.id },
           manager.name
         );
       })
@@ -25126,17 +25126,17 @@ var Nav = function Nav(_ref) {
   var path = location.pathname;
   return _react2.default.createElement(
     'ul',
-    null,
+    { className: 'nav nav-pills' },
     _react2.default.createElement(
       'li',
-      null,
+      { className: 'nav-item' },
       path === '/' ? _react2.default.createElement(
         'span',
-        null,
+        { className: 'nav-link font-weight-bold active' },
         'Home'
       ) : _react2.default.createElement(
         _reactRouterDom.Link,
-        { to: '/' },
+        { className: 'nav-link', to: '/' },
         'Home'
       )
     ),
@@ -25145,11 +25145,11 @@ var Nav = function Nav(_ref) {
       null,
       path === '/managers' ? _react2.default.createElement(
         'span',
-        null,
+        { className: 'nav-link font-weight-bold active' },
         'Managers'
       ) : _react2.default.createElement(
         _reactRouterDom.Link,
-        { to: '/managers' },
+        { className: 'nav-link', to: '/managers' },
         'Managers'
       )
     )

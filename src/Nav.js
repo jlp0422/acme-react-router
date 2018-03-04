@@ -5,21 +5,21 @@ import { Link } from 'react-router-dom';
 const Nav = ({ location }) => {
   const path = location.pathname
   return (
-    <ul>
-      <li>
+    <ul className="nav nav-pills">
+      <li className="nav-item">
       {
         path === '/' ?
-        <span>Home</span>
+        <span className="nav-link font-weight-bold active">Home</span>
         :
-        <Link to='/'>Home</Link>
+        <Link className="nav-link" to='/'>Home</Link>
       }
       </li>
       <li>
       {
         path === '/managers' ?
-        <span>Managers</span>
+        <span className="nav-link font-weight-bold active">Managers</span>
         :
-        <Link to='/managers'>Managers</Link>
+        <Link className="nav-link" to='/managers'>Managers</Link>
       }
       </li>
     </ul>

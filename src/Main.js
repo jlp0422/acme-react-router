@@ -27,7 +27,7 @@ export default class Main extends React.Component {
   render() {
     return (
       <Router>
-        <div>
+        <div className="container">
           <Route component={ Nav } />
           <Route exact path='/' render={(employees) => (<Employees employees={this.state.people} /> )}/>
           <Route exact path='/managers' render={(managers) => (<Managers managers={this.state.people} />)} />
