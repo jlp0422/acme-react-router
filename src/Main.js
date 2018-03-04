@@ -1,6 +1,6 @@
 /* eslint-disable */
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Route, HashRouter as Router } from 'react-router-dom';
 import Employees from './Employees';
 import Managers from './Managers';
 import Nav from './Nav';
@@ -26,11 +26,13 @@ export default class Main extends React.Component {
 
   render() {
     return (
-      <div>
-        <Nav />
-        <Employees employees={this.state.people}/>
-        <Managers managers={this.state.people} />
-      </div>
+      <Router>
+        <div>
+          <Route component={ Nav } />
+          <Route exact path='/' render={(employees) => (<Employees employees={this.state.people} /> )}/>
+          <Route exact path='/managers' render={(managers) => (<Managers managers={this.state.people} />)} />
+        </div>
+      </Router>
     )
   }
 }
