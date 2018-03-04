@@ -24145,9 +24145,7 @@ var axios = __webpack_require__(23); /* eslint-disable */
 
 
 function Employees(props) {
-  console.log(props);
   var employees = props.employees;
-  // console.log(employees)
   return _react2.default.createElement(
     'div',
     null,
@@ -25128,14 +25126,21 @@ var _reactRouterDom = __webpack_require__(16);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /* eslint-disable */
-var Nav = function Nav() {
+var Nav = function Nav(_ref) {
+  var location = _ref.location;
+
+  var path = location.pathname;
   return _react2.default.createElement(
     'ul',
     null,
     _react2.default.createElement(
       'li',
       null,
-      _react2.default.createElement(
+      path === '/' ? _react2.default.createElement(
+        'span',
+        null,
+        'Home'
+      ) : _react2.default.createElement(
         _reactRouterDom.Link,
         { to: '/' },
         'Home'
@@ -25144,7 +25149,11 @@ var Nav = function Nav() {
     _react2.default.createElement(
       'li',
       null,
-      _react2.default.createElement(
+      path === '/managers' ? _react2.default.createElement(
+        'span',
+        null,
+        'Managers'
+      ) : _react2.default.createElement(
         _reactRouterDom.Link,
         { to: '/managers' },
         'Managers'

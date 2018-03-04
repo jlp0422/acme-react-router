@@ -22,7 +22,9 @@ app.listen(port, () => console.log(`listening on port: ${port}`))
 
 // SEQUELIZE
 const Sequelize = require('sequelize');
-const conn = new Sequelize(process.env.DATABASE_URL || 'postgres://localhost/acme_react_db')
+const conn = new Sequelize(process.env.DATABASE_URL || 'postgres://localhost/acme_react_db', {
+  logging: false
+})
 
 const Employee = conn.define('employee', {
   name: {
