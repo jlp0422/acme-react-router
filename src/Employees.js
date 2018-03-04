@@ -6,20 +6,23 @@ function Employees (props) {
   const employees = props.employees
   return (
     <div>
-      <h1>These are our employees</h1>
+      <h1>These are our Employees</h1>
       <ul>
         {
           employees &&
           employees.map(employee => (
-            <li key={employee.id}>{employee.name}
-              {employee.ManagerId ? <p>is managed by {employee.Manager.name}</p>
-                :
-                null
-              }
+          <li key={employee.id}>
+            {
+              employee.ManagerId ?
+                `${employee.name} is managed by ${employee.Manager.name}`
+               :
+                `${employee.name}`
+            }
             </li>
           ))
         }
       </ul>
+
     </div>
   )
 }

@@ -6,7 +6,7 @@ function Managers(props) {
   const managers = props.managers.filter(manager => manager.Worker.length)
   return (
     <div>
-      <h1>These are our managers</h1>
+      <h1>These are our Managers</h1>
       <ul>
       {
         managers.map(manager => (

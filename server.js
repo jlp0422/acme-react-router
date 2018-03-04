@@ -40,13 +40,14 @@ const seed = () => {
   return Promise.all([
     Employee.create({ name: 'joe' }),
     Employee.create({ name: 'jeremy' }),
-    Employee.create({ name: 'evan' })
+    Employee.create({ name: 'evan' }),
+    Employee.create({ name: 'anna'})
   ])
-  .then(([joe, jeremy, evan]) => {
+  .then(([joe, jeremy, evan, anna]) => {
     joe.setManager(jeremy)
-    evan.setManager(jeremy)
+    evan.setManager(anna)
     jeremy.setWorker(joe)
-    jeremy.setWorker(evan)
+    anna.setWorker(evan)
   })
 }
 

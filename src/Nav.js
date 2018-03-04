@@ -5,7 +5,6 @@ import { Link } from 'react-router-dom';
 const Nav = ({ location }) => {
   const path = location.pathname
   return (
-
     <ul>
       <li>
       {
@@ -24,7 +23,6 @@ const Nav = ({ location }) => {
       }
       </li>
     </ul>
-
   )
 }
 

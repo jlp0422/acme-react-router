@@ -24152,7 +24152,7 @@ function Employees(props) {
     _react2.default.createElement(
       'h1',
       null,
-      'These are our employees'
+      'These are our Employees'
     ),
     _react2.default.createElement(
       'ul',
@@ -24161,13 +24161,7 @@ function Employees(props) {
         return _react2.default.createElement(
           'li',
           { key: employee.id },
-          employee.name,
-          employee.ManagerId ? _react2.default.createElement(
-            'p',
-            null,
-            'is managed by ',
-            employee.Manager.name
-          ) : null
+          employee.ManagerId ? employee.name + ' is managed by ' + employee.Manager.name : '' + employee.name
         );
       })
     )
@@ -25088,7 +25082,7 @@ function Managers(props) {
     _react2.default.createElement(
       'h1',
       null,
-      'These are our managers'
+      'These are our Managers'
     ),
     _react2.default.createElement(
       'ul',
