@@ -48,13 +48,11 @@ const seed = () => {
   .then(([joe, jeremy, evan, anna]) => {
     joe.setManager(jeremy)
     evan.setManager(anna)
-    jeremy.setWorker(joe)
-    anna.setWorker(evan)
   })
 }
 
 Employee.belongsTo(Employee, { as: 'Manager'})
-Employee.hasMany(Employee, { as: 'Worker' })
+Employee.hasMany(Employee, { as: 'Worker', foreignKey: 'ManagerId' })
 
 sync()
   .then(() => seed())
